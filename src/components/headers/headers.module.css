@@ -1,0 +1,71 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+}
+.item {
+    composes: item from "../group/group.module.css";
+    padding: 10px;
+    position: relative;
+}
+.item:last-child {
+    border-right: none;
+}
+.title {
+    font-size: 18px;
+    color: #a90f3f;
+    display: flex;
+}
+.title img {
+    width: 20px;
+    margin-right: 5px;
+}
+.subTitle {
+    flex-basis: 100%;
+    display: flex;
+    align-items: baseline;
+    margin-top: 10px;
+    color: #726666;
+}
+.subTitle img {
+    width: 20px;
+    margin-right: 5px;
+}
+.settings {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    opacity: 0.5;
+    border: none;
+}
+.settings img {
+    fill: #726666;
+    width: 12px;
+    height: 12px;
+}
+.settings:hover {
+    opacity: 1;
+}
+.question {
+    composes: settings;
+    top: 30px;
+    background-color: #726666;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    opacity: 0.4;
+}
+.question::after {
+    content: "?";
+    color: #fff;
+    position: absolute;
+    font-size: 10px;
+    top: 1px;
+    right: 3px;
+}
+.question:hover {
+    opacity: 1;
+}

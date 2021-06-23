@@ -1,0 +1,15 @@
+.hiddensEl {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+}
+.hiddensEl div {
+    transform: translateY(-400%);
+}
+.hiddensElActive div {
+    transform: translateY(0%);
+}
+.wrapper {
+    position: relative;
+    overflow: hidden;
+}

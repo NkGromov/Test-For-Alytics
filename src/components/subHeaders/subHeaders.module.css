@@ -1,0 +1,26 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+}
+.item {
+    composes: item from "../group/group.module.css";
+}
+.item:last-child {
+    border-right: none;
+}
+.title {
+    font-size: 16px;
+    color: #474747;
+    font-weight: 700;
+}
+.button {
+    outline: none;
+    cursor: pointer;
+    font-size: 12px;
+    display: block;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: #4b94c9;
+    display: initial;
+}

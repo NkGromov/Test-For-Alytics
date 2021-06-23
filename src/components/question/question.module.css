@@ -1,0 +1,46 @@
+.button {
+    outline: none;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid #726666;
+    width: 13px;
+    height: 14px;
+    position: relative;
+    opacity: 0.6;
+    cursor: pointer;
+}
+.button::after {
+    content: "?";
+    color: #726666;
+    font-weight: 700;
+    position: absolute;
+    font-size: 10px;
+    top: 0px;
+    right: 3px;
+}
+.button:hover {
+    opacity: 1;
+}
+.button:hover + .text {
+    opacity: 1;
+}
+.text {
+    font-size: 12px;
+    padding: 5px;
+    opacity: 0;
+    color: #474747;
+    font-weight: 700;
+    background-color: #fff;
+    position: absolute;
+    max-width: 130px;
+    right: -130px;
+    top: 5px;
+    z-index: 100;
+}
+.wrapper {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    display: inline;
+    vertical-align: super;
+}

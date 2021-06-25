@@ -12,6 +12,18 @@
     font-size: 16px;
     color: #474747;
     font-weight: 700;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    z-index: 101;
+    max-width: 63px;
+    width: 100%;
+    text-align: center;
+}
+.title:hover {
+    filter: brightness(1.5);
 }
 .button {
     outline: none;
@@ -23,4 +35,19 @@
     border: none;
     color: #4b94c9;
     display: initial;
+}
+.flex {
+    display: flex;
+    align-items: center;
+}
+.arrow {
+    width: 15px;
+    transform: rotate(90deg);
+    fill: #474747;
+    stroke: #474747;
+    margin-left: 5px;
+}
+.arrow path {
+    fill: #474747;
+    stroke: #474747;
 }

@@ -13,6 +13,9 @@
     align-items: center;
     position: relative;
 }
+.itemActive {
+    background-color: #f6f6f6;
+}
 .item:first-child {
     justify-self: unset;
 }
@@ -62,6 +65,9 @@
 .text {
     font-size: 16px;
     color: #474747;
+    max-width: 63px;
+    width: 100%;
+    text-align: center;
 }
 .subTitle {
     font-size: 16px;

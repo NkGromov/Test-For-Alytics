@@ -39,8 +39,8 @@
 }
 .wrapper {
     position: relative;
+    display: flex;
     width: 14px;
     height: 14px;
-    display: inline;
-    vertical-align: super;
+    margin-left: 7px;
 }

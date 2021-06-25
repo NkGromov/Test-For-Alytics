@@ -1,28 +1,21 @@
 import React from "react";
 import styles from "./group.module.css";
-import iconFour from "../../img/crm.png";
 import { useContext } from "react";
 import { HidenContext } from "../../containers/groups/Groups";
-type props = {
-    name: any;
-    shows: any;
-    sessions: any;
-    ctr: any;
-    price: any;
-    count: any;
-    cpa: any;
-    proceeds: any;
-    countTarget: any;
-    cpaTarget: any;
-    cr: any;
+import { statistics } from "../../redux/types";
+interface props extends statistics {
+    name: string;
     toggle?: any;
+    soursecesNum?: any;
+    img: any;
     type: "group" | "ad" | "source";
-};
-const Group: React.FC<props> = ({ name, type, toggle, shows, sessions, ctr, price, count, cpa, proceeds, countTarget, cpaTarget, cr }) => {
+}
+
+const Group: React.FC<props> = ({ name, img, type, clicks, toggle, expenses, shows, sessions, CTR, price, counts, CPA, proceeds, countsTarget, CPATarget, CR, soursecesNum }) => {
     const ishidden = useContext(HidenContext);
     return (
         <div className={styles.wrapper}>
-            <div className={styles.item}>
+            <div className={`${styles.item} ${!ishidden && styles.itemActive}`}>
                 <div className={styles.wrapperTitle}>
                     {type === "group" ? (
                         <>
@@ -30,15 +23,15 @@ const Group: React.FC<props> = ({ name, type, toggle, shows, sessions, ctr, pric
                                 <span className={styles.line}></span>
                                 <span className={styles.line}></span>
                             </button>
-                            <img src={iconFour} alt="Изоброжение группы" className={styles.groupImg} />
+                            <img src={img} alt="Изоброжение группы" className={styles.groupImg} />
                             <div>
                                 <span className={styles.title}>{name}</span>
-                                <span className={styles.subTitle}>Группа. Источников 1</span>
+                                <span className={styles.subTitle}>Группа. Источников {soursecesNum}</span>
                             </div>
                         </>
                     ) : type === "ad" ? (
                         <>
-                            <img src={iconFour} alt="Изоброжение группы" className={`${styles.groupImg} ${styles.margin}`} />
+                            <img src={img} alt="Изоброжение группы" className={`${styles.groupImg} ${styles.margin}`} />
                             <div>
                                 <span className={styles.title}>{name}</span>
                                 <span className={styles.subTitle}>платная реклама</span>
@@ -47,7 +40,7 @@ const Group: React.FC<props> = ({ name, type, toggle, shows, sessions, ctr, pric
                         </>
                     ) : (
                         <>
-                            <img src={iconFour} alt="Изоброжение группы" className={`${styles.groupImg} ${styles.margin}`} />
+                            <img src={img} alt="Изоброжение группы" className={`${styles.groupImg} ${styles.margin}`} />
                             <div>
                                 <span className={styles.title}>{name}</span>
                             </div>
@@ -55,23 +48,23 @@ const Group: React.FC<props> = ({ name, type, toggle, shows, sessions, ctr, pric
                     )}
                 </div>
             </div>
-            <div className={styles.item}>
+            <div className={`${styles.item} ${!ishidden && styles.itemActive}`}>
                 <span className={styles.text}>{shows}</span>
-                <span className={styles.text}>{shows}</span>
+                <span className={styles.text}>{clicks}</span>
                 <span className={styles.text}>{sessions}</span>
-                <span className={styles.text}>{ctr}</span>
+                <span className={styles.text}>{CTR}</span>
                 <span className={styles.text}>{price}</span>
-                <span className={styles.text}>{name}</span>
+                <span className={styles.text}>{expenses}</span>
             </div>
-            <div className={styles.item}>
-                <span className={styles.text}>{count}</span>
-                <span className={styles.text}>{cpa}</span>
+            <div className={`${styles.item} ${!ishidden && styles.itemActive}`}>
+                <span className={styles.text}>{counts}</span>
+                <span className={styles.text}>{CPA}</span>
                 <span className={styles.text}>{proceeds}</span>
             </div>
-            <div className={styles.item}>
-                <span className={styles.text}>{countTarget}</span>
-                <span className={styles.text}>{cpaTarget}</span>
-                <span className={styles.text}>{cr}</span>
+            <div className={`${styles.item} ${!ishidden && styles.itemActive}`}>
+                <span className={styles.text}>{countsTarget}</span>
+                <span className={styles.text}>{CPATarget}</span>
+                <span className={styles.text}>{CR}</span>
             </div>
         </div>
     );

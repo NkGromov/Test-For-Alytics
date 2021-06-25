@@ -27,4 +27,7 @@
 .text {
     font-size: 16px;
     color: #474747;
+    max-width: 63px;
+    width: 100%;
+    text-align: center;
 }

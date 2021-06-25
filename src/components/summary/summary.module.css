@@ -4,7 +4,7 @@
 }
 .item {
     composes: item from "../group/group.module.css";
-    background-color: #f0f8a8;
+    background-color: #fef7ec;
 }
 .item:last-child {
     border-right: none;

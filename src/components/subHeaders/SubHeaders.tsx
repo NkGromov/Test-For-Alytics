@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./subHeaders.module.css";
 import Question from "../question/Question";
-import { useDispatch } from "react-redux";
 import TitleBtn from "./TitleBtn";
 
 const SubHeaders = () => {

@@ -21,11 +21,12 @@ export interface statistics {
     shows: number;
     expenses: number;
 }
-export interface sourseces extends statistics {
+export interface sourseces {
     id: number;
     groupId: number;
     img: string;
     name?: string;
+    props: statistics;
 }
 
 export type sort = keyof statistics;

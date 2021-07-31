@@ -1,16 +1,15 @@
-import React from "react";
-import styles from "./table.module.css";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Group from "../../components/group/Group";
 import Headers from "../../components/headers/Headers";
 import SubHeaders from "../../components/subHeaders/SubHeaders";
 import Summary from "../../components/summary/Summary";
-import Groups from "../groups/Groups";
-import Group from "../../components/group/Group";
-import { useEffect } from "react";
 import data from "../../data/data.json";
-import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../redux/appReducer";
-import { groups } from "../../redux/types";
 import { AppStateType } from "../../redux/store";
+import { groups } from "../../redux/types";
+import Groups from "../groups/Groups";
+import styles from "./table.module.css";
 
 const Table = () => {
     const dispatch = useDispatch();
@@ -24,18 +23,18 @@ const Table = () => {
                     name={el.name}
                     key={el.id}
                     type="ad"
-                    clicks={el.sourseces[0].clicks}
-                    shows={el.sourseces[0].shows}
-                    sessions={el.sourseces[0].sessions}
-                    CTR={el.sourseces[0].CTR}
-                    price={el.sourseces[0].price}
-                    counts={el.sourseces[0].counts}
-                    CPA={el.sourseces[0].CPA}
-                    proceeds={el.sourseces[0].proceeds}
-                    countsTarget={el.sourseces[0].countsTarget}
-                    CPATarget={el.sourseces[0].CPATarget}
-                    CR={el.sourseces[0].CR}
-                    expenses={el.sourseces[0].expenses}
+                    clicks={el.sourseces[0].props.clicks}
+                    shows={el.sourseces[0].props.shows}
+                    sessions={el.sourseces[0].props.sessions}
+                    CTR={el.sourseces[0].props.CTR}
+                    price={el.sourseces[0].props.price}
+                    counts={el.sourseces[0].props.counts}
+                    CPA={el.sourseces[0].props.CPA}
+                    proceeds={el.sourseces[0].props.proceeds}
+                    countsTarget={el.sourseces[0].props.countsTarget}
+                    CPATarget={el.sourseces[0].props.CPATarget}
+                    CR={el.sourseces[0].props.CR}
+                    expenses={el.sourseces[0].props.expenses}
                     img={el.img}
                 />
             );

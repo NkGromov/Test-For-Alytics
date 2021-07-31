@@ -1,9 +1,7 @@
-import React from "react";
-import styles from "./groups.module.css";
+import React, { useRef, useState } from "react";
 import Group from "../../components/group/Group";
-import { useState } from "react";
-import { useRef } from "react";
 import { groups } from "../../redux/types";
+import styles from "./groups.module.css";
 export const HidenContext = React.createContext(true);
 const Groups: React.FC<groups> = (props) => {
     const [ishidden, setIsHidden] = useState<boolean>(true);
@@ -42,18 +40,18 @@ const Groups: React.FC<groups> = (props) => {
                                     name={el.name}
                                     type="source"
                                     key={el.id}
-                                    clicks={el.clicks}
-                                    shows={el.shows}
-                                    sessions={el.sessions}
-                                    CTR={el.CTR}
-                                    price={el.price}
-                                    counts={el.counts}
-                                    CPA={el.CPA}
-                                    proceeds={el.proceeds}
-                                    countsTarget={el.countsTarget}
-                                    CPATarget={el.CPATarget}
-                                    CR={el.CR}
-                                    expenses={el.expenses}
+                                    clicks={el.props.clicks}
+                                    shows={el.props.shows}
+                                    sessions={el.props.sessions}
+                                    CTR={el.props.CTR}
+                                    price={el.props.price}
+                                    counts={el.props.counts}
+                                    CPA={el.props.CPA}
+                                    proceeds={el.props.proceeds}
+                                    countsTarget={el.props.countsTarget}
+                                    CPATarget={el.props.CPATarget}
+                                    CR={el.props.CR}
+                                    expenses={el.props.expenses}
                                     img={el.img}
                                 />
                             )
